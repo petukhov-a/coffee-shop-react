@@ -1,11 +1,15 @@
 import twoCoffeeBeansWhite from '../resources/images/two-coffee-beans-white.svg'
+import desk from '../resources/images/desk.jpg';
 
 import './section1.scss';
 
 const Section1 = () => {
     return (
         <div>
-            <section className="section-1">
+            <section className="section-1" style={{backgroundImage: `url(${desk})`,
+                                                   backgroundRepeat: "no-repeat",
+                                                   backgroundSize: "cover",
+                                                   backgroundPosition: 'center'}}>
                 <nav class="navbar">
                     <a href="#" className="navbar__link">
                         <img src={twoCoffeeBeansWhite} alt="logo" className="logo-img"/>
