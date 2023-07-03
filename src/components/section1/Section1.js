@@ -1,4 +1,4 @@
-import twoCoffeeBeansWhite from '../resources/images/two-coffee-beans-white.svg'
+import NavList from '../navList/NavList';
 import desk from '../resources/images/desk.jpg';
 
 import './section1.scss';
@@ -10,14 +10,7 @@ const Section1 = () => {
                                                 backgroundSize: "cover",
                                                 backgroundPosition: 'center'}}>
             <nav className="navbar">
-                <div className="navbar-list">
-                    <a href="#" className="navbar__link">
-                        <img src={twoCoffeeBeansWhite} alt="logo" className="logo-img"/>
-                        <span>Coffee House</span>
-                    </a>
-                    <a href="#" className="navbar__link">Our coffee</a>
-                    <a href="#" className="navbar__link">For your pleasure</a>
-                </div>
+                <NavList coffeeBeansColor="white"/>
             </nav>
             <h1 className="section-1__heading">Everything You Love About Coffee</h1>
             <div className="separator">

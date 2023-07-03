@@ -1,4 +1,3 @@
-import paper from '../resources/images/paper.jpg';
 import CoffeeCard from '../coffeeCard/CoffeeCard';
 
 import './coffeeCards.scss';
@@ -12,10 +11,7 @@ const CoffeeCards = ({data}) => {
     });
 
     return (
-        <div className="coffee-cards" style={{backgroundImage: `${paper}`,
-                                              backgroundRepeat: 'no-repeat',
-                                              backgroundSize: 'cover',
-                                              backgroundPosition: 'center'}}>
+        <div className="coffee-cards">
             {elements}
         </div>
     );

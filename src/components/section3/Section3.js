@@ -8,11 +8,11 @@ const Section3 = ({data}) => {
                                            backgroundRepeat: 'no-repeat',
                                            backgroundSize: 'cover',
                                            backgroundPosition: 'center'}}>
-        <h2 className="section-3__heading section-heading">
-            Our best
-        </h2>
-        <CoffeeCards data={data}/>
-    </section>
+            <h2 className="section-3__heading section-heading">
+                Our best
+            </h2>
+            <CoffeeCards data={data}/>
+        </section>
     );
 }
 
