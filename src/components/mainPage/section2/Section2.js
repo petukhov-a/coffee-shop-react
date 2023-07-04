@@ -1,4 +1,4 @@
-import Separator from '../separator/Separator';
+import Separator from '../../separator/Separator';
 import './section2.scss';
 
 const Section2 = () => {

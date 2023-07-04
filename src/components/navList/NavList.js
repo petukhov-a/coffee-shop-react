@@ -1,6 +1,7 @@
 import './navList.scss';
 
 const NavList = ({coffeeBeansColor}) => {
+
     return (
         <div className="nav-list">
             <a href="#" className="nav-list__link">

@@ -1,23 +1,27 @@
-import Section1 from "../section1/Section1";
-import Section2 from "../section2/Section2";
-import Section3 from "../section3/Section3";
-import Footer from "../footer/Footer";
+import { Component } from 'react';
+import Navbar from '../navbar/Navbar';
+import MainPage from "../mainPage/mainPage/MainPage";
+import Footer from '../footer/Footer';
+import OurCoffeePage from "../ourCoffeePage/ourCoffeePage/OurCoffeePage";
 
-const App = () => {
-    const data = [
-        {img: "images/solimo-coffee.jpg", desq: 'Solimo Coffee Beans 2 kg', price: 10.73, id: 1},
-        {img: "images/presto-coffee.jpg", desq: 'Presto Coffee Beans 1 kg', price: 15.99, id: 2},
-        {img: "images/aromistico-coffee.jpg", desq: 'AROMISTICO Coffee 1 kg', price: 6.99, id: 3},
-    ];
+class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            display: 'none'
+        }
+    }
 
-    return (
-        <div className="app">
-            <Section1 />
-            <Section2 />
-            <Section3 data={data}/>
-            <Footer />
-        </div>
-    );
+    render() {
+        return (
+            <div className="app">
+                <Navbar />
+                <MainPage />
+                <OurCoffeePage />
+                <Footer />
+            </div>
+        );
+    }
 }
 
 export default App;
