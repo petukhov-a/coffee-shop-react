@@ -1,23 +1,40 @@
 import { Component } from 'react';
 import Navbar from '../navbar/Navbar';
-import MainPage from "../mainPage/mainPage/MainPage";
+import MainPage from "../pages/mainPage/mainPage/MainPage";
 import Footer from '../footer/Footer';
-import OurCoffeePage from "../ourCoffeePage/ourCoffeePage/OurCoffeePage";
+import OurCoffeePage1 from "../pages/ourCoffeePage1/ourCoffeePage1/OurCoffeePage1";
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            display: 'none'
+            currentPage: 'main-page'
         }
     }
 
+    showPage = () => {
+        switch (this.state.currentPage) {
+            case 'our-coffee-1':
+                return (<OurCoffeePage1 />);
+            default: 
+                return (<MainPage />);
+        }
+    }
+
+    onLinkClick = (pageName) => {
+            this.setState({
+                currentPage: pageName
+            })
+    }
+
     render() {
+
+        const currentPage = this.showPage();
+
         return (
             <div className="app">
-                <Navbar />
-                <MainPage />
-                <OurCoffeePage />
+                <Navbar onLinkClick={this.onLinkClick}/>
+                    {currentPage}
                 <Footer />
             </div>
         );

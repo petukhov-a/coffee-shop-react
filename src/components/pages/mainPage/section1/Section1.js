@@ -1,4 +1,4 @@
-import Separator from '../../separator/Separator';
+import Separator from '../../../separator/Separator';
 import desk from '../resources/images/desk.jpg';
 
 import './section1.scss';

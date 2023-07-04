@@ -2,10 +2,10 @@ import NavList from "../navList/NavList";
 
 import './navbar.scss';
 
-const Navbar = () => {
+const Navbar = ({onLinkClick}) => {
     return (
         <nav className="navbar">
-            <NavList coffeeBeansColor="white"/>
+            <NavList coffeeBeansColor="white" onLinkClick={onLinkClick}/>
         </nav>
     );
 }
