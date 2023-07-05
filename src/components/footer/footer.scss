@@ -17,7 +17,6 @@
         fill: black;
     }
     .separator {
-        margin: 0;
         &::before, &::after {
             background-color: #000;
         }

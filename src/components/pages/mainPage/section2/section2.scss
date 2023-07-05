@@ -5,20 +5,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .separator::after, .separator::before {
+        background-color: black;
+    }
     &__paragraph {
         width: 60rem;
         font-size: 1.4rem;
         text-align: center;
         font-weight: 300;
         line-height: 1.5;
-    }
-    .separator {
-        margin-bottom: 4rem;
-    }
-    .separator::before, .separator::after {
-        background-color: #000;
-    }
-    .separator #three-coffee-beans {
-        fill: #000;
+        margin-top: 4rem;
     }
 }

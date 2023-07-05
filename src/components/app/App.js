@@ -21,7 +21,7 @@ class App extends Component {
         }
     }
 
-    onLinkClick = (pageName) => {
+    onNavItemClick = (pageName) => {
             this.setState({
                 currentPage: pageName
             })
@@ -33,9 +33,9 @@ class App extends Component {
 
         return (
             <div className="app">
-                <Navbar onLinkClick={this.onLinkClick}/>
+                <Navbar onNavItemClick={this.onNavItemClick}/>
                     {currentPage}
-                <Footer />
+                <Footer onNavItemClick={this.onNavItemClick}/>
             </div>
         );
     }

@@ -2,10 +2,10 @@ import NavList from '../navList/NavList';
 import Separator from '../separator/Separator';
 import './footer.scss';
 
-const Footer = () => {
+const Footer = ({onNavItemClick}) => {
     return (
         <footer className="footer">
-            <NavList coffeeBeansColor="black"/>
+            <NavList coffeeBeansColor="black" onNavItemClick={onNavItemClick}/>
             <Separator coffeeBeansColor="black" />
         </footer>
     );

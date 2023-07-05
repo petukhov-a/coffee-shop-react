@@ -1,9 +1,13 @@
-const OurCoffeePage = ({display}) => {
+import Header from "../../../header/Header";
+import AboutBeans from "../aboutBeansSection/AboutBeans";
+
+const OurCoffeePage1 = () => {
     return (
-        <div className="ourCoffeePage" style={{display: display}}>
-            <h1>ANOTHER PAGE!</h1>
+        <div className="our-coffee-page-1">
+            <Header />
+            <AboutBeans />
         </div>
     );
 }
 
-export default OurCoffeePage;
+export default OurCoffeePage1
