@@ -1,6 +1,6 @@
 import './coffeeSearchFilter.scss';
 
-const CoffeeSearch = () => {
+const CoffeeSearchFilter = () => {
     return (
         <div className="coffee-goods">
             <form className="coffee-goods-search-form">
@@ -24,4 +24,4 @@ const CoffeeSearch = () => {
     );
 }
 
-export default CoffeeSearch;
+export default CoffeeSearchFilter;

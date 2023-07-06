@@ -1,0 +1,30 @@
+.our-coffee-card {
+    width: 22rem;
+    height: 26rem;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0.5rem 0.5rem 1rem #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3.7rem 2.4rem 0 2.4rem;
+    gap: 1rem;
+    font-size: 1.4rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    &__img {
+        width: 16.7rem;
+        height: 11.5rem;
+    }
+    &__country {
+        margin-left: auto;
+    }
+    &__price {
+        margin-left: auto;
+        font-weight: 700;
+    }
+    &:hover {
+        box-shadow: 0.5rem 0.5rem 2rem #ccc;
+        transform: scale(1.01);
+    }
+}

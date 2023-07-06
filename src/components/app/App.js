@@ -2,7 +2,7 @@ import { Component } from 'react';
 import Navbar from '../navbar/Navbar';
 import MainPage from "../pages/mainPage/mainPage/MainPage";
 import Footer from '../footer/Footer';
-import OurCoffeePage1 from "../pages/ourCoffeePage/ourCoffeePage/OurCoffeePage";
+import OurCoffeePage from "../pages/ourCoffeePage/ourCoffeePage/OurCoffeePage";
 
 class App extends Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class App extends Component {
     showPage = () => {
         switch (this.state.currentPage) {
             case 'our-coffee':
-                return (<OurCoffeePage1 />);
+                return (<OurCoffeePage />);
             default: 
                 return (<MainPage />);
         }
@@ -28,7 +28,6 @@ class App extends Component {
     }
 
     render() {
-
         const currentPage = this.showPage();
 
         return (
