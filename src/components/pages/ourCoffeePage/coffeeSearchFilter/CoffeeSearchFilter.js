@@ -1,10 +1,10 @@
 import './coffeeSearchFilter.scss';
 
-const CoffeeSearchFilter = () => {
+const CoffeeSearchFilter = ({onUpdateSearch}) => {
     return (
         <div className="coffee-goods">
             <form className="coffee-goods-search-form">
-                <label htmlFor="search-text">Looking for</label><input type="text" placeholder='start typing here...' />
+                <label htmlFor="search-text">Looking for</label><input type="text" onChange={(e) => onUpdateSearch(e.target.value)} placeholder='start typing here...' />
             </form>
             <div className="coffee-goods-filter">
                 <span>Or filter</span>
