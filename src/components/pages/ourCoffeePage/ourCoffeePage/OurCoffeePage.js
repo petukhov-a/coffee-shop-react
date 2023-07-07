@@ -10,13 +10,14 @@ class OurCoffeePage extends Component {
         this.state = {
             data: [
                 {coffeeImg: 'images/aromistico-coffee.jpg', coffeeName: 'AROMISTICO Coffee 1 kg', country: 'Brazil', price: 6.99, id: 1},
-                {coffeeImg: 'images/aromistico-coffee.jpg', coffeeName: 'AROMISTICO Coffee 1 kg', country: 'Kenya', price: 6.99, id: 2},
-                {coffeeImg: 'images/aromistico-coffee.jpg', coffeeName: 'AROMISTICO Coffee 1 kg', country: 'Columbia', price: 6.99, id: 3},
+                {coffeeImg: 'images/presto-coffee.jpg', coffeeName: 'Presto Coffee Beans 1 kg', country: 'Kenya', price: 12.99, id: 2},
+                {coffeeImg: 'images/solimo-coffee.jpg', coffeeName: 'Solimo Coffee Beans 2 kg', country: 'Columbia', price: 8.99, id: 3},
                 {coffeeImg: 'images/aromistico-coffee.jpg', coffeeName: 'AROMISTICO Coffee 1 kg', country: 'Brazil', price: 6.99, id: 4},
                 {coffeeImg: 'images/aromistico-coffee.jpg', coffeeName: 'AROMISTICO Coffee 1 kg', country: 'Brazil', price: 6.99, id: 5},
                 {coffeeImg: 'images/aromistico-coffee.jpg', coffeeName: 'AROMISTICO Coffee 1 kg', country: 'Brazil', price: 6.99, id: 6},
             ],
-            term: ''
+            term: '',
+            filter: ''
         }
     }
 
@@ -24,26 +25,31 @@ class OurCoffeePage extends Component {
         this.setState({term});
     }
 
-    searchCoffee = (items, term) => {
-        if (term === '') {
+    onFilterSelect = (filter) => {
+        this.setState({filter});
+    }
+
+    filterCoffee = (items, filter, filteringValue) => {
+        if (filter === '') {
             return items;
         }
 
         return items.filter(item => {
-            return item.coffeeName.includes(term);
+            return item[filteringValue].includes(filter);
         })
     }
 
     render() {
-        const {data, term} = this.state;
-        const searchData = this.searchCoffee(data, term);
+        const {data, term, filter} = this.state;
+        const searchData = this.filterCoffee(data, term, 'coffeeName');
+        const filterData = this.filterCoffee(searchData, filter, 'country');
 
         return (
             <div className="our-coffee-page">
                 <Header />
                 <AboutBeans />
-                <CoffeeSearchFilter onUpdateSearch={this.onUpdateSearch}/>
-                <OurCoffeeCards data={searchData}/>
+                <CoffeeSearchFilter onUpdateSearch={this.onUpdateSearch} onFilterSelect={this.onFilterSelect} filter={filter}/>
+                <OurCoffeeCards data={filterData}/>
             </div>
         );
     }
