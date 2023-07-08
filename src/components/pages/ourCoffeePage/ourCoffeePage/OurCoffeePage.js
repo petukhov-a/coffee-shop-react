@@ -18,9 +18,11 @@ class OurCoffeePage extends Component {
             ],
             term: '',
             filter: '',
-            hide: false,
+            display: 'flex',
             paragraph: this.aboutBeansParagraph,
-            heading: 'About our beans'
+            heading: 'About our beans',
+            aboutCoffeeImg: 'images/girl-coffee.jpg',
+            currentCardKey: ''
         }
     }
 
@@ -37,8 +39,6 @@ class OurCoffeePage extends Component {
             is song that held help face.
         </p>
     );
-
-    
 
     coffeeDesqParagraph = (country, price) => {
         return (
@@ -70,22 +70,32 @@ class OurCoffeePage extends Component {
         })
     }
 
-    onCardClick = (hide, heading) => {
-        this.setState({hide, heading});
+    onCardClick = (display, heading, aboutCoffeeImg, id) => {
+        this.setState({display, heading, aboutCoffeeImg, currentCardKey: id});
     }
 
     render() {
-        const {data, term, filter, paragraph, heading} = this.state;
+        const {data, term, filter, heading, display, currentCardKey, aboutCoffeeImg} = this.state;
         const searchData = this.filterCoffee(data, term, 'coffeeName');
         const filterData = this.filterCoffee(searchData, filter, 'country');
-        const coffeeParagraph = this.coffeeDesqParagraph('Brazil', 16.99);
+        
+        let coffeeParagraph;
+        if (display === 'none') {
+            data.forEach(item => {
+                if (item.id === currentCardKey) {
+                    coffeeParagraph = this.coffeeDesqParagraph(item.country, item.price)
+                }
+            });
+        } else {
+            coffeeParagraph = this.aboutBeansParagraph;
+        }
 
         return (
             <div className="our-coffee-page">
                 <Header />
-                <AboutBeans paragraph={paragraph} heading={heading}/>
-                <CoffeeSearchFilter onUpdateSearch={this.onUpdateSearch} onFilterSelect={this.onFilterSelect} filter={filter} hide={this.hide}/>
-                <OurCoffeeCards data={filterData} onCardClick={this.onCardClick}/>
+                <AboutBeans paragraph={coffeeParagraph} heading={heading} aboutCoffeeImg={aboutCoffeeImg}/>
+                <CoffeeSearchFilter onUpdateSearch={this.onUpdateSearch} onFilterSelect={this.onFilterSelect} filter={filter} display={display}/>
+                <OurCoffeeCards data={filterData} onCardClick={this.onCardClick} display={display}/>
             </div>
         );
     }
