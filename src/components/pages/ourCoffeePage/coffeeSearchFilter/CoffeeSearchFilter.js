@@ -1,6 +1,6 @@
 import './coffeeSearchFilter.scss';
 
-const CoffeeSearchFilter = ({onUpdateSearch, onFilterSelect, filter}) => {
+const CoffeeSearchFilter = ({onUpdateSearch, onFilterSelect, filter, hide}) => {
     const onFilterClick = (e, name) => {
         if (e.target.classList.value.includes('active')) {
             onFilterSelect('');
@@ -31,7 +31,7 @@ const CoffeeSearchFilter = ({onUpdateSearch, onFilterSelect, filter}) => {
 
     return (
         <div className="coffee-goods">
-            <form className="coffee-goods-search-form">
+            <form className="coffee-goods-search-form" onSubmit={(e) => e.preventDefault()}>
                 <label htmlFor="search-text">Looking for</label>
                 <input type="text"
                        onChange={(e) => onUpdateSearch(e.target.value)}

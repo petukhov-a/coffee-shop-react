@@ -24,7 +24,7 @@
 }
 
 .about-beans-wrapper {
-    width: 34rem;
+    width: 45rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +41,21 @@
 }
 
 .about-beans-paragraph {
+    width: 34rem;
     margin-top: 2.5rem;
     text-align: center;
     font-size: 1.4rem;
+}
+
+.about-coffee-paragraph {
+    margin-top: 2.5rem;
+    font-size: 1.4rem;
+    span {
+        font-weight: 700;
+    }
+    span.coffee-price {
+        font-weight: 300;
+        font-size: 2.5rem;
+    }
+
 }
