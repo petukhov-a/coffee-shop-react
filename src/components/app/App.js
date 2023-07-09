@@ -3,6 +3,7 @@ import Navbar from '../navbar/Navbar';
 import MainPage from "../pages/mainPage/mainPage/MainPage";
 import Footer from '../footer/Footer';
 import OurCoffeePage from "../pages/ourCoffeePage/ourCoffeePage/OurCoffeePage";
+import ForYourPleasure from '../pages/forYourPleasurePage/forYourPleasure';
 
 class App extends Component {
     constructor(props) {
@@ -15,7 +16,9 @@ class App extends Component {
     showPage = () => {
         switch (this.state.currentPage) {
             case 'our-coffee':
-                return (<OurCoffeePage />);
+                return (<OurCoffeePage background='/images/our-coffee-header.png' headerHeading='Our coffee'/>);
+            case 'for-your-pleasure':
+                return (<ForYourPleasure />);
             default: 
                 return (<MainPage />);
         }

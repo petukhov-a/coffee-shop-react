@@ -1,14 +1,14 @@
 import './header.scss';
 
-const Header = () => {
+const Header = ({background, headerHeading}) => {
     return (
         <header className='header' style={{
-            backgroundImage: 'url(/images/our-coffee-header.png)',
+            backgroundImage: `url(${background})`,
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover'
         }}>
-            <h1 className='header__heading'>Our Coffee</h1>
+            <h1 className='header__heading'>{headerHeading}</h1>
         </header>
     );
 }

@@ -76,9 +76,13 @@ class OurCoffeePage extends Component {
 
     render() {
         const {data, term, filter, heading, display, currentCardKey, aboutCoffeeImg} = this.state;
+        const {background, aboutGoodsHeading, headerHeading, aboutGoodsImg} = this.props;
         const searchData = this.filterCoffee(data, term, 'coffeeName');
         const filterData = this.filterCoffee(searchData, filter, 'country');
-        
+
+        const currentHeading = aboutGoodsHeading ? aboutGoodsHeading : heading;
+        const currentAboutImg = aboutGoodsImg ? aboutGoodsImg : aboutCoffeeImg;
+
         let coffeeParagraph;
         if (display === 'none') {
             data.forEach(item => {
@@ -92,8 +96,8 @@ class OurCoffeePage extends Component {
 
         return (
             <div className="our-coffee-page">
-                <Header />
-                <AboutBeans paragraph={coffeeParagraph} heading={heading} aboutCoffeeImg={aboutCoffeeImg}/>
+                <Header background={background} headerHeading={headerHeading}/>
+                <AboutBeans paragraph={coffeeParagraph} heading={currentHeading} aboutCoffeeImg={currentAboutImg}/>
                 <CoffeeSearchFilter onUpdateSearch={this.onUpdateSearch} onFilterSelect={this.onFilterSelect} filter={filter} display={display}/>
                 <OurCoffeeCards data={filterData} onCardClick={this.onCardClick} display={display}/>
             </div>
